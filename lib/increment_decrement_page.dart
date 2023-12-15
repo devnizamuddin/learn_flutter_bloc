@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_flutter/cubit/counter_cubit.dart';
+import 'bloc/counter_bloc.dart';
 
 class IncrementDecrementPage extends StatelessWidget {
   const IncrementDecrementPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final CounterCubit counterCubit = BlocProvider.of<CounterCubit>(context);
+    final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
 
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
@@ -20,13 +20,13 @@ class IncrementDecrementPage extends StatelessWidget {
         children: [
           IconButton(
             onPressed: () {
-              counterCubit.increment();
+              counterBloc.add(CounterIncremented());
             },
             icon: const Icon(Icons.add),
           ),
           IconButton(
             onPressed: () {
-              counterCubit.decrement();
+              counterBloc.add(CounterDecremented());
             },
             icon: const Icon(Icons.remove),
           )
