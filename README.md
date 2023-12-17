@@ -1,6 +1,6 @@
 # Learn Flutter
 
-A new Flutter project.
+A new Flutter project for learning state management  using "Flutter Bloc".
 
 ## Getting Started
 
